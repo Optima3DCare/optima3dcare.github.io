@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Logo</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+            <a href="shop.html">Shop</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="who">
+            <h1>Who are we?</h1>
+    
+            <div class="flexbox">
+                <video width="600" autoplay loop controls>
+                    <source src="./images/videos/animated_logo.mp4" type="video/mp4">
+                  </video>
+                  <div>
+                    <p>Our company name is "Optima 3D Care". 
+                        We are aiming to make environment-friendly products made via 3D
+                        development that will protect health care
+                        products from getting damaged by conditions
+                        such as heat.
+                        <br> <br >
+                        We are introducing our noble product, 'InsuRakshak', 
+                        a protective case which will keep life saving drugs 
+                        like insulin in optimal temperature. Medicines and injections are sensitive
+                        to heat. High or too low temperature can alter the 
+                        chemical composition of the drug which makes it 
+                        unsuitable to consume. It's a compact,
+                        easy to carry case which will protect insulin even in
+                        extremely harsh heat.
+                    </p>
+                    <a href="#team">
+                        <button class="button meettm">Meet our team</button>
+                    </a>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team" id="team">
+        <h1>Meet our team</h1>
+
+        <div class="grid">
+            <div class="card">
+                <img src="./images/1.png" alt="">
+                <h1>Aviral Kochgaway</h1>
+                <p>Front End Developer</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/2.png" alt="">
+                <h1>Shubhashree Panda</h1>
+                <p>Marketing & Communications Specialist</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/6.png" alt="">
+                <h1>Devina Chakraborty</h1>
+                <p>Social Media Strategist</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/5.png" alt="">
+                <h1>Anushka Mallick</h1>
+                <p>Graphic Designer and Videographer</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/4.png" alt="">
+                <h1>Sashreek Satapathy</h1>
+                <p>Automation & Robotics Engineer</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/3.png" alt="">
+                <h1>Madhvendra Dwivedi</h1>
+                <p>Electro-mechanical Engineer</p>
+            </div>
+
+
+        </div>
+    </section>
+    <br> <br>
+
+    <section class="gallery">
+        <h1>View our Snaps!</h1>
+
+        <div class="slider">
+
+            <div class="slide">
+              <img
+                src="./images/gallery/1.jpeg"
+                alt=""
+              />
+            </div>
+      
+            <div class="slide">
+              <img src="./images/gallery/2.jpeg" alt="" />
+            </div>
+      
+            <div class="slide">
+              <img src="./images/gallery/3.jpeg" alt="" />
+            </div>
+      
+            <div class="slide">
+              <img src="./images/gallery/4.jpeg" alt="" />
+            </div>
+
+            <div class="slide">
+                <img src="./images/gallery/5.jpeg" alt="" />
+              </div>
+
+              <div class="slide">
+                <img src="./images/gallery/6.jpeg" alt="" />
+              </div>
+      
+            <button class="btn btn-next button">></button>
+            <button class="btn btn-prev button"><</button>
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="column1 column">
+            <h1>O3C</h1>
+            <p>&copy;OPTIMA 3D CARE 2023</p>
+      </div>
+      <div class="column2 column">
+          <h2>Pages</h2>
+          <div class="links">
+            <a href="index.html">HOME</a><br>
+            <a href="#">ABOUT</a><br>
+            <a href="shop.html">SHOP</a><br>
+            <a href="contact.html">CONTACT</a><br><br>
+          </div>
+      </div>
+
+      <div class="colum3 column">
+          <h2>Important Links</h2>
+          <div class="links">
+            <a href="#">PRIVACY POLICY</a><br>
+            <a href="#">TERMS AND  <br>CONDITIONS</a><br>
+            <a href="#">PAYMENT POLICY</a><br>
+          </div>
+      </div>
+
+      <div class="column4 column">
+          <h2>Support</h2>
+          <div class="links">
+            <a href="#">CONTACT</a><br>
+            <a href="#">EMAIL</a><br>
+          </div>
+      </div>
+
+      <div class="column5 column">
+          <h2>Products & Apps</h2>
+          <div class="links">
+            <a href="#">INSURAKSHAK</a><br>
+            <a href="#">INSURAKHAK APP</a><br>
+          </div>
+      </div>
+
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const slides = document.querySelectorAll(".slide");
+
+        slides.forEach((slide, indx) => {
+            slide.style.transform = `translateX(${indx * 100}%)`;
+        });
+
+        const nextSlide = document.querySelector(".btn-next");
+
+        let curSlide = 0;
+        let maxSlide = slides.length - 1;
+
+        nextSlide.addEventListener("click", function () {
+            if (curSlide === maxSlide) {
+                curSlide = 0;
+            } else {
+                curSlide++;
+            }
+
+            slides.forEach((slide, indx) => {
+                slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+            });
+        });
+
+        const prevSlide = document.querySelector(".btn-prev");
+
+        prevSlide.addEventListener("click", function () {
+            if (curSlide === 0) {
+                curSlide = maxSlide;
+            } else {
+                curSlide--;
+            }
+
+            //   move slide by 100%
+            slides.forEach((slide, indx) => {
+                slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+            });
+        });
+
+    </script>
+</body>
+</html>
