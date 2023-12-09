@@ -27,12 +27,42 @@
     </section>
 
     <section class="products">
-        <h1>Products</h1>
-
+        <h1 class="heading">Products</h1> <br />
         <div class="product-ir">
-            <h1>InsuRakshak</h1>
+            <div class="left-pr">
+                <img src="https://wallpapers.com/images/hd/cool-profile-picture-ld8f4n1qemczkrig.jpg" alt="">
+            </div>
+
+            <div class="right-pr">
+                <h1>InsuRakshak</h1>
+
+                <p>Lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, asperiores dolore suscipit neque fuga voluptatem recusandae harum consequuntur sapiente fugit ad aperiam. Sapiente qui, maiores nobis fugiat ut excepturi sint?
+                </p>
+
+                <h1 style="margin: 10px;">₹1500</h1>
+
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+
+                <br />
+
+                <div>
+                    <button class="button" id="atc">Add To Cart</button>
+                
+                    <div class="cart-count" id="cart-count">
+                        <button class="button" id="down">-</button>
+                        <p id="count">1</p>
+                        <button class="button" id="up">+</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <h1 style="font-size: 20px; text-align: center; margin: 10px; color: white;">That's all!</h1>
 
     <footer>
 
@@ -77,5 +107,47 @@
 
   </footer>
   <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const atc = document.getElementById("atc")
+    const cc = document.getElementById("cart-count")
+    atc.addEventListener("click", () => {
+        atc.style.display = 'none';
+        cc.style.display = 'flex'
+    })
+
+    let count = 1;
+    const up = document.getElementById("up");
+    const down = document.getElementById("down")
+    const cElem = document.getElementById("count")
+
+    const getCount = () => {
+        cElem.textContent = count;
+    }
+
+    const setCount = (state) => {
+        if (state){
+            count = (count < 5) ? count + 1 : count; 
+        } else {
+            count = (count > 0) ? count - 1 : count;
+        }
+
+        if (count == 0){
+            atc.style.display = 'block';
+            cc.style.display = 'none'
+        }
+    }
+
+    up.addEventListener("click", () => {
+        setCount(true);
+        getCount();
+    })
+
+    down.addEventListener("click", () => {
+        setCount(false)
+        getCount();
+    })
+
+  </script>
 </body>
 </html>

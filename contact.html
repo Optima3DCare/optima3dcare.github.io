@@ -73,14 +73,15 @@
 
         </div>
 
-        <form class="form">
+        <form action="https://formspree.io/f/mpzgvjwr"
+        method="POST" class="form">
             <h1>Contact Us</h1>
     
-            <input type="text" id="name" placeholder="Name" required>
-            <input type="email" id="email" placeholder="Email Address" required>
-            <input type="number" id="number" placeholder="Phone Number" required>
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <input type="number" id="number" name="number" placeholder="Phone Number" required>
     
-            <textarea id="msg" style="resize: none;" cols="30" rows="10" placeholder="Your message" required></textarea>
+            <textarea id="msg" name="message" style="resize: none;" cols="30" rows="10" placeholder="Your message" required></textarea>
             
             <button type="submit" class="button">Send</button>
         </form>

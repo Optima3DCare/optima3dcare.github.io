@@ -689,8 +689,76 @@ footer {
 }
 
 .top{
-  margin-top: 5%;
+  margin-top: 6%;
+  margin-right: 2%;
 }
+
+.products .heading{
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+.product-ir{
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.product-ir .left-pr{
+  width: fit-content;
+}
+
+.product-ir .left-pr img{
+  width: 250px;
+  border-radius: 50%;
+}
+
+.product-ir .right-pr{
+  margin-left: 20px;
+}
+
+.product-ir .right-pr button{
+  padding: 15px;
+}
+
+.product-ir .right-pr h1{
+  font-size: 35px;
+}
+
+.product-ir h1{
+  font-size: 25px;
+  color: white;
+}
+
+.product-ir p{
+  margin-top: 10px;
+  color: rgb(211, 211, 211);
+}
+
+#atc{
+  margin-top: 10px;
+}
+
+.cart-count{
+  /* display: flex; */
+  align-items: center;
+  display: none;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#count{
+  font-size: 20px;
+  margin: 5px;
+}
+
 
 /* BREAKPOINTS */
 @media (max-width: 992px) {
