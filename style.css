@@ -36,7 +36,7 @@ body {
   align-items: center;
   backdrop-filter: blur(30px);
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  z-index: 100;
+  z-index: 9999;
 }
 
 .header::before {
@@ -759,6 +759,100 @@ footer {
   margin: 5px;
 }
 
+.cart-container{
+  display: none;
+  position:fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(31, 30, 30, 0.24);
+  transition: 0.3s ease;
+}
+
+.close__top{
+  width: 100%;
+  text-align: right;
+  height: 5%;
+}
+
+.close__top button{
+  margin: 10px;
+  padding: 10px;
+}
+
+.cart{
+  margin: auto;
+  position: fixed;
+  z-index: 9999;
+  top: 53%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  height: 80%;
+  width: 40%;
+  background: rgba(0, 0, 0, 0.402);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+}
+
+.cart h2{
+  text-align: center;
+  font-size: 32px;
+  margin-top: 10px;
+  color: white;
+}
+
+.item{
+  background: rgba(0, 0, 0, 0.402);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.item .name h1{
+  font-size: 20px;
+  color: white;
+}
+
+.price {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin-right: 5px;
+}
+
+.quantity{
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.pricequan{
+  color: white;
+  display: flex;
+  margin-top: 5px;
+}
+
+#total{
+  text-align: right;
+  color: white;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.checkout{
+  width: 90%;
+  padding: 20px;
+  margin-top: 20px;
+
+}
+
+.batman_forever{
+  display: flex;
+  justify-content: center;
+}
 
 /* BREAKPOINTS */
 @media (max-width: 992px) {

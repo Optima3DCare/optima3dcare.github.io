@@ -8,8 +8,47 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+
+    <section class="cart-container" id="dbc">
+        <div class="cart">
+            <div class="close__top">
+                <button class="button" id="close">
+                    <i class='bx bx-collapse-alt'></i>
+                </button>
+            </div>
+            <h2>Your Cart</h2>
+
+            <h3 style="text-align: center; color: white; margin-top: 10px" id="empty">Empty :(</h3>
+
+            <div class="item" id="item">
+                <div class="name">
+                    <h1>InsuRakshak</h1>
+                </div>
+    
+                <div class="pricequan">
+                    <div class="price">
+                        <p>Price: </p>
+                        <b><p>₹1500</p></b>
+                    </div>
+
+                    <div class="quantity">
+                        <p>| Quantity: </p>
+                        <b><p id="quan">1</p></b>
+                    </div>
+                </div>
+            </div>
+
+            <h1 id="total">Total: ₹3000</h1>
+            
+            <div class="batman_forever">
+                <button class="checkout button" id="checkout">Checkout</button>
+            </div>
+        </div>
+        
+    </section>
+    
     <header class="header">
-        <a href="#" class="logo">Logo</a>
+        <a href="#" class="logo">O3C</a>
         <i class='bx bx-menu' id="menu-icon"></i>
         <nav class="navbar">
             <a href="index.html">Home</a>
@@ -19,11 +58,15 @@
         </nav>
     </header>
 
+
+
     <section class="top" style="text-align: right; ">
-        <button class="button" style="padding: 15px; width: 10%;">
+        <button class="button" id="cart-btn" style="padding: 15px; width: 10%;">
             <i class='bx bx-cart' style="font-size: 20px;"></i>
             Cart
         </button>
+
+        
     </section>
 
     <section class="products">
@@ -36,7 +79,7 @@
             <div class="right-pr">
                 <h1>InsuRakshak</h1>
 
-                <p>Lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, asperiores dolore suscipit neque fuga voluptatem recusandae harum consequuntur sapiente fugit ad aperiam. Sapiente qui, maiores nobis fugiat ut excepturi sint?
+                <p>A protective case which will keep life saving drugs like insulin in optimal temperature. Medicines and injections are sensitive to heat. High or too low temperature can alter the chemical composition of the drug which makes it unsuitable to consume. It's a compact, easy to carry case which will protect insulin even in extremely harsh heat.
                 </p>
 
                 <h1 style="margin: 10px;">₹1500</h1>
@@ -83,9 +126,9 @@
       <div class="colum3 column">
           <h2>Important Links</h2>
           <div class="links">
-            <a href="#">PRIVACY POLICY</a><br>
-            <a href="#">TERMS AND  <br>CONDITIONS</a><br>
-            <a href="#">PAYMENT POLICY</a><br>
+            <a href="./privacy-policy.md">PRIVACY POLICY</a><br>
+            <a href="./terms&conditions.md">TERMS AND  <br>CONDITIONS</a><br>
+            <a href="./p-policy.md">PAYMENT POLICY</a><br>
           </div>
       </div>
 
@@ -107,47 +150,115 @@
 
   </footer>
   <script src="script.js"></script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-    const atc = document.getElementById("atc")
-    const cc = document.getElementById("cart-count")
-    atc.addEventListener("click", () => {
-        atc.style.display = 'none';
-        cc.style.display = 'flex'
-    })
+        const atc = document.getElementById("atc");
+        const cc = document.getElementById("cart-count");
+        const countTxt = document.getElementById("count");
+        const up = document.getElementById("up");
+        const down = document.getElementById("down");
+        const cartBtn = document.getElementById("cart-btn");
+        const dbContainer = document.getElementById("dbc");
+        const closeBtn = document.getElementById("close");
+        const cartQuan = document.getElementById("quan");
+        const empty = document.getElementById("empty");
+        const item = document.getElementById("item");
+        const total = document.getElementById("total");
+        const checkout = document.getElementById("checkout")
 
-    let count = 1;
-    const up = document.getElementById("up");
-    const down = document.getElementById("down")
-    const cElem = document.getElementById("count")
 
-    const getCount = () => {
-        cElem.textContent = count;
-    }
-
-    const setCount = (state) => {
-        if (state){
-            count = (count < 5) ? count + 1 : count; 
-        } else {
-            count = (count > 0) ? count - 1 : count;
+        const displayCC = () => {
+            cc.style.display = 'flex';
+            atc.style.display = 'none';
         }
 
-        if (count == 0){
+        const displayAtc = () => {
             atc.style.display = 'block';
             cc.style.display = 'none'
+            atc.addEventListener("click", () => {
+                count = 1;
+                countTxt.textContent = count;
+                localStorage.setItem("count", count)
+                displayCC();
+                fetchData(count);
+            })
         }
-    }
 
-    up.addEventListener("click", () => {
-        setCount(true);
-        getCount();
-    })
+        const reset = () => {
+            if (count == 0){
+                localStorage.removeItem("count");
+                displayAtc();
+            }
+        }
 
-    down.addEventListener("click", () => {
-        setCount(false)
-        getCount();
-    })
+        const decrease = () => {
+            count = count > 0 ? count - 1 : 0; 
+            localStorage.setItem("count",count);
+            countTxt.textContent = count;
+            reset();
 
+        }
+        const increase = () => {
+            count = count < 5 ? count + 1 : 5; 
+            localStorage.setItem("count", count);
+            countTxt.textContent = count;
+        }
+
+
+
+        const fetchData = (data) => {
+            if (data > 0){
+                empty.style.display = 'none';
+                total.style.display = 'block';
+                checkout.style.display = 'block';
+                item.style.display = 'block';
+                cartQuan.textContent = data;
+            } else {
+                empty.style.display = 'block';
+                total.style.display = 'none';
+                checkout.style.display = 'none';
+                item.style.display = 'none';
+            }
+            total.textContent = 'Total: ₹' + (1500 * count)
+        }
+
+        let count;
+        if (localStorage.getItem("count") != null){
+            count = parseInt(localStorage.getItem("count"));
+            displayCC();
+            countTxt.textContent = count;
+            fetchData(count);
+        } else {
+            count = 0
+            localStorage.setItem("count",count);
+            displayAtc();
+            atc.addEventListener("click", () => {
+                count = 1;
+                localStorage.setItem("count",count);
+                displayCC();
+            })
+            fetchData(count);
+        }
+
+        cartBtn.addEventListener("click", () => {
+            dbContainer.style.display = 'block';
+            fetchData(count);
+        })
+
+        closeBtn.addEventListener("click", () => {
+            dbContainer.style.display = 'none';
+        })
+
+        up.addEventListener("click", () => {
+            increase()
+            fetchData(count);
+        });
+
+        down.addEventListener("click", () => {
+            decrease()
+            fetchData(count);
+        });
   </script>
 </body>
 </html>
