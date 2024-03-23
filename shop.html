@@ -6,8 +6,11 @@
     <title>Shop</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
 </head>
 <body>
+    <a href="./checkout.html" id="random"></a>
 
     <section class="cart-container" id="dbc">
         <div class="cart">
@@ -28,7 +31,7 @@
                 <div class="pricequan">
                     <div class="price">
                         <p>Price: </p>
-                        <b><p>₹1500</p></b>
+                        <b><p>₹1340</p></b>
                     </div>
 
                     <div class="quantity">
@@ -48,7 +51,7 @@
     </section>
     
     <header class="header">
-        <a href="#" class="logo">O3C</a>
+        <img src="images/logo.png" alt="Logo" class="logo">
         <i class='bx bx-menu' id="menu-icon"></i>
         <nav class="navbar">
             <a href="index.html">Home</a>
@@ -61,7 +64,7 @@
 
 
     <section class="top" style="text-align: right; ">
-        <button class="button" id="cart-btn" style="padding: 15px; width: 10%;">
+        <button class="button" id="cart-btn" >
             <i class='bx bx-cart' style="font-size: 20px;"></i>
             Cart
         </button>
@@ -73,7 +76,7 @@
         <h1 class="heading">Products</h1> <br />
         <div class="product-ir">
             <div class="left-pr">
-                <img src="https://wallpapers.com/images/hd/cool-profile-picture-ld8f4n1qemczkrig.jpg" alt="">
+                <img src="images/insurakshak.png" alt="Insurakshak Image" height="80%">
             </div>
 
             <div class="right-pr">
@@ -82,15 +85,25 @@
                 <p>A protective case which will keep life saving drugs like insulin in optimal temperature. Medicines and injections are sensitive to heat. High or too low temperature can alter the chemical composition of the drug which makes it unsuitable to consume. It's a compact, easy to carry case which will protect insulin even in extremely harsh heat.
                 </p>
 
-                <h1 style="margin: 10px;">₹1500</h1>
+                <h1 style="margin: 10px;">₹1340 (20% off)</h1>
 
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star'></i>
-
                 <br />
+                <p>Choose colour: </p>
+                <select name="colour" id="colour">
+                    <option value="purple">Purple</option>
+                    <option value="gray">Gray</option>
+                    <option value="cyan">Cyan</option>
+                    <option value="brown">Brown</option>
+                    <option value="magenda">Magenda</option>
+                    <option value="black">Black</option>
+                </select>
+
+                <br /> <br />
 
                 <div>
                     <button class="button" id="atc">Add To Cart</button>
@@ -124,27 +137,27 @@
       </div>
 
       <div class="colum3 column">
-          <h2>Important Links</h2>
-          <div class="links">
-            <a href="./privacy-policy.md">PRIVACY POLICY</a><br>
-            <a href="./terms&conditions.md">TERMS AND  <br>CONDITIONS</a><br>
-            <a href="./p-policy.md">PAYMENT POLICY</a><br>
-          </div>
-      </div>
+        <h2>Important Links</h2>
+        <div class="links">
+          <a href="./privacy-policy.html">PRIVACY POLICY</a><br>
+          <a href="./termsconditions.html">TERMS AND  <br>CONDITIONS</a><br>
+          <a href="./p-policy.html">PAYMENT POLICY</a><br>
+        </div>
+    </div>
 
       <div class="column4 column">
           <h2>Support</h2>
           <div class="links">
-            <a href="#">CONTACT</a><br>
-            <a href="#">EMAIL</a><br>
+            <a href="./contact.html">CONTACT</a><br>
+            <a href="./contact.html">EMAIL</a><br>
           </div>
       </div>
 
       <div class="column5 column">
           <h2>Products & Apps</h2>
           <div class="links">
-            <a href="#">INSURAKSHAK</a><br>
-            <a href="#">INSURAKHAK APP</a><br>
+            <a href="./shop.html">INSURAKSHAK</a><br>
+            <a href="./shop.html">INSURAKHAK APP</a><br>
           </div>
       </div>
 
@@ -165,7 +178,9 @@
         const empty = document.getElementById("empty");
         const item = document.getElementById("item");
         const total = document.getElementById("total");
-        const checkout = document.getElementById("checkout")
+        const checkout = document.getElementById("checkout");
+        const random = document.getElementById("random");
+        const colourElem = document.getElementById("colour");
 
 
         const displayCC = () => {
@@ -220,10 +235,14 @@
                 checkout.style.display = 'none';
                 item.style.display = 'none';
             }
-            total.textContent = 'Total: ₹' + (1500 * count)
+            total.textContent = 'Total: ₹' + (1340 * count)
         }
 
         let count;
+        let colour = "Purple";
+
+        localStorage.setItem("colour", colour)
+
         if (localStorage.getItem("count") != null){
             count = parseInt(localStorage.getItem("count"));
             displayCC();
@@ -243,6 +262,8 @@
 
         cartBtn.addEventListener("click", () => {
             dbContainer.style.display = 'block';
+            colour = colourElem.options[colourElem.selectedIndex].text;
+            localStorage.setItem("colour",colour)
             fetchData(count);
         })
 
@@ -259,6 +280,10 @@
             decrease()
             fetchData(count);
         });
+        
+        checkout.addEventListener("click", () => {
+            random.click();
+        })
   </script>
 </body>
 </html>

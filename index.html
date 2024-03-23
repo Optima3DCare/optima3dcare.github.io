@@ -7,10 +7,11 @@
     <title>Optima 3D Care</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">O3C</a>
+        <img src="images/logo.png" alt="Logo" class="logo">
         <i class='bx bx-menu' id="menu-icon"></i>
         <nav class="navbar">
             <a href="index.html">Home</a>
@@ -75,16 +76,21 @@
         <h1 class="title">Listen more from our users!</h1> 
 
         <div class="testimonial">
-            <h1>Aviral Kochgaway</h1>
+            <h1 id="name_testi">Payel Pal</h1>
             <br />
 
             <div class="testi-body">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpcCcQNUGyTpt1jjsWPZVrdEvPHO3kr7Tdg&usqp=CAU" alt="" />
+                <img src="./payel maam.jpeg" alt="" id="image"/>
 
                 <div class="right">
-                <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
-                    ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
-                    ipsum   </p>
+                <p id="review-testi">InsuRakshak from Optima 3D Care revolutionizes the insulin user's
+                    experience on the move. With its stylish and durable design, it
+                    safeguards insulin cartridges from temperature changes, ideal 
+                    for globetrotters. Not only does it excel in functionality, but
+                    it also appeals to wanderlust with its portability. Simple to 
+                    operate and conveniently sized, InsuRakshak provides reassurance
+                    during travel, essential for insulin users prioritizing convenience
+                    and dependability.  </p>
 
                     <button class="button wow">Wow</button>
                 </div>
@@ -135,7 +141,7 @@
                     </div>
 
                     <div class="ftr card">
-                        <h2>Low Cost</h2>
+                        <h2>Pocket Friendly</h2>
 
                         <p>Many such devices in the market are available for
                             around Rs. 10K. We offer it for Rs. 2K and for
@@ -144,7 +150,7 @@
                     </div>
 
                     <div class="ftr card">
-                        <h2>Comes with App</h2>
+                        <h2>Comes w/ App & Manual</h2>
 
                         <p>InsuRakshak comes with an app, which helps know 
                             the status of the device, and can even make the 
@@ -160,19 +166,19 @@
                 <div class="bar">
                     InsuRakshak (Product)
 
-                    <button>&rarr;</button>
+                    <button onclick="window.open('https://optima3dcare.github.io/shop.html')">&rarr;</button>
                 </div>
 
                 <div class="bar">
                     InsuRakshak App
 
-                    <button>&rarr;</button>
+                    <button onclick="window.open('https://optima3dcare.github.io/shop.html')">&rarr;</button>
                 </div>
 
                 <div class="bar">
                     InsuRakshak (Discount)
 
-                    <button>&rarr;</button>
+                    <button onclick="window.open('https://optima3dcare.github.io/shop.html')">&rarr;</button>
                 </div>
             </section>
 
@@ -249,27 +255,27 @@
       </div>
 
       <div class="colum3 column">
-          <h2>Important Links</h2>
-          <div class="links">
-            <a href="./privacy-policy.md">PRIVACY POLICY</a><br>
-            <a href="./terms&conditions.md">TERMS AND  <br>CONDITIONS</a><br>
-            <a href="./p-policy.md">PAYMENT POLICY</a><br>
-          </div>
-      </div>
+        <h2>Important Links</h2>
+        <div class="links">
+          <a href="./privacy-policy.html">PRIVACY POLICY</a><br>
+          <a href="./termsconditions.html">TERMS AND  <br>CONDITIONS</a><br>
+          <a href="./p-policy.html">PAYMENT POLICY</a><br>
+        </div>
+    </div>
 
       <div class="column4 column">
           <h2>Support</h2>
           <div class="links">
-            <a href="#">CONTACT</a><br>
-            <a href="#">EMAIL</a><br>
+            <a href="./contact.html">CONTACT</a><br>
+            <a href="./contact.html">EMAIL</a><br>
           </div>
       </div>
 
       <div class="column5 column">
           <h2>Products & Apps</h2>
           <div class="links">
-            <a href="#">INSURAKSHAK</a><br>
-            <a href="#">INSURAKHAK APP</a><br>
+            <a href="./shop.html">INSURAKSHAK</a><br>
+            <a href="./shop.html">INSURAKHAK APP</a><br>
           </div>
       </div>
 
@@ -278,5 +284,47 @@
     <div class="nav-bg"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
+    <script>
+        const name_ = document.getElementById("name_testi");
+        const body = document.getElementById("review-testi");
+        const left = document.getElementById("left");
+        const right = document.getElementById("right");
+        const image = document.getElementById("image");
+        let condition = true;
+
+        const reviews = [{
+            name_of: "Payel Pal",
+            body: "InsuRakshak from Optima 3D Care revolutionizes the insulin user's experience on the move. With its stylish and durable design, it safeguards insulin cartridges from temperature changes, ideal for globetrotters. Not only does it excel in functionality, but it also appeals to wanderlust with its portability. Simple to operate and conveniently sized, InsuRakshak provides reassurance during travel, essential for insulin users prioritizing convenience and dependability.",
+            image: './payel maam.jpeg'
+        },
+        {
+            name_of: "Swagata Misra",
+            body: "InsuRakshak by Optima 3D Care is a game-changer for insulin users on the go. Its sleek design and robust construction ensure that insulin cartridges are protected against fluctuating temperatures, making it perfect for adventurous travelers. Not only does it prioritize functionality, but it also caters to the touristy spirit with how easy to carry it is. Easy to use and compact, InsuRakshak offers peace of mind while exploring the world, making it a must-have for any insulin user seeking convenience and reliability.",
+            image: './swagata maam.jpeg'
+        }
+        ]
+
+        function update(){
+            if (condition == true){
+                name_.textContent = reviews[0].name_of;
+                body.textContent = reviews[0].body;
+                image.src = reviews[0].image;
+            } else {
+                name_.textContent = reviews[1].name_of;
+                body.textContent = reviews[1].body;
+                image.src = reviews[1].image;
+            }
+        }
+
+        left.addEventListener("click", () => {
+            condition = !condition;
+            update();
+        })
+
+        right.addEventListener("click", () => {
+            condition = !condition;
+            update();
+        })
+    </script>
 </body>
 </html>

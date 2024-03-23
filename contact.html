@@ -6,11 +6,12 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">O3C</a>
+        <img src="images/logo.png" alt="Logo" class="logo">
         <i class='bx bx-menu' id="menu-icon"></i>
         <nav class="navbar">
             <a href="index.html">Home</a>
@@ -62,14 +63,21 @@
                             <h2>Socials</h2>
                         </div>
         
-                        <p>@optima3dcare</p>
+                        <i class='bx bxl-twitter'style="font-size: 20px;"></i>
+                        <p style="display: inline;"><a style="text-decoration: underline; color: white;" href="https://twitter.com/optima3dcare">@optima3dcare</a></p> <br >
+
+                        <i class='bx bxl-instagram'style="font-size: 20px;"></i>
+                        <p style="display: inline;"><a style="text-decoration: underline; color: white;" href="https://instagram.com/optima3dcare">@optima3dcare</a></p> <br>
+
+                        <i class='bx bxl-facebook'style="font-size: 20px;"></i>
+                        <p style="display: inline;"><a style="text-decoration: underline; color: white;" href="https://www.facebook.com/share/sKdagZpby8cfmZDE/?mibextid=qi2Omg">@optima3dcare</a></p>
                     </div>
                 </div>
 
             </div>
 
             <div style="text-align: center;">
-                <button class="button">Thank You!</button>
+                <button class="button" id="ty-button">Thank You!</button>
             </div>
 
         </div>
@@ -90,7 +98,7 @@
 
     <section class="social">
 
-        <a class="fb" href="https://www.google.com" target="_blank">
+        <a class="fb" href="https://www.facebook.com/share/sKdagZpby8cfmZDE/?mibextid=qi2Omg" target="_blank">
             <img src="./images/facebook.png" alt="">
         </a>
 
@@ -111,7 +119,7 @@
         </a>
     </section>
 
-    <footer>
+    <footer class="lolicantdothis">
 
         <div class="column1 column">
             <h1>O3C</h1>
@@ -130,29 +138,37 @@
         <div class="colum3 column">
             <h2>Important Links</h2>
             <div class="links">
-                <a href="./privacy-policy.md">PRIVACY POLICY</a><br>
-                <a href="./terms&conditions.md">TERMS AND  <br>CONDITIONS</a><br>
-                <a href="./p-policy.md">PAYMENT POLICY</a><br>
+              <a href="./privacy-policy.html">PRIVACY POLICY</a><br>
+              <a href="./termsconditions.html">TERMS AND  <br>CONDITIONS</a><br>
+              <a href="./p-policy.html">PAYMENT POLICY</a><br>
             </div>
         </div>
+    
+          <div class="column4 column">
+              <h2>Support</h2>
+              <div class="links">
+                <a href="./contact.html">CONTACT</a><br>
+                <a href="./contact.html">EMAIL</a><br>
+              </div>
+          </div>
+    
+          <div class="column5 column">
+              <h2>Products & Apps</h2>
+              <div class="links">
+                <a href="./shop.html">INSURAKSHAK</a><br>
+                <a href="./shop.html">INSURAKHAK APP</a><br>
+              </div>
+          </div>
 
-        <div class="column4 column">
-            <h2>Support</h2>
-            <div class="links">
-            <a href="#">CONTACT</a><br>
-            <a href="#">EMAIL</a><br>
-            </div>
-        </div>
+    </footer >
 
-        <div class="column5 column">
-            <h2>Products & Apps</h2>
-            <div class="links">
-            <a href="#">INSURAKSHAK</a><br>
-            <a href="#">INSURAKHAK APP</a><br>
-            </div>
-        </div>
+    <script>
+        const button = document.getElementById("ty-button");
 
-    </footer>
+        button.addEventListener("click", () => {
+            button.textContent = "💙"
+        })
+    </script>
 
     <div class="nav-bg"></div>
     <script src="script.js"></script>

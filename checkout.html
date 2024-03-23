@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+            <a href="shop.html">Shop</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="form checkout">
+        <form
+            action="https://formspree.io/f/xzblnajp"
+            method="POST"
+        >
+            <label>
+                Your email:
+                <input type="email" name="email" id="email" required>
+            </label> 
+
+            <br> <br>
+
+            <label>
+                Your phone number & address: (please include pin code and landmark) <br />
+                <input type="text" name="address" id="address" required>
+            </label> 
+
+
+            <br><br>
+
+
+            <center>
+                <label>
+                    Product Name: 
+                    <b><p style="display: inline;">InsuRakshak</p></b>
+                     |
+                </label>
+    
+                <label>
+                    Colour: 
+                    <input type="text" readonly value="Gray" style="display: inline;" id="colour-elem" name="colour" class="readonly">
+                     |
+                </label> 
+    
+                <label>
+                    Number: 
+                    <input type="text" readonly value="2" style="display: inline;" id="number-elem" name="number" class="readonly">
+                     |
+                </label> 
+                
+                <label>
+                    Product Price: 
+                    <b><p style="display: inline;">₹1340</p></b>
+                </label>
+             <br><br>
+
+            <label>
+                Total Price: 
+                <b><p id="total-elem" style="display: inline;">₹2680</p></b>
+            </label> <br><br>
+
+            <label>
+                Payment Option: 
+                <b><p id="colour-elem" style="display: inline;">POD (Pay on Delivery)</p></b>
+            </label> <br><br>
+
+        </center>
+            
+            <button type="submit" class="button">Order</button>
+
+            <p style="text-align: center; font-size: 13px; margin-top: 3px">Your request will be directly sent to our team. We will get in touch with you soon.</p>
+        </form>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const colour_elem = document.getElementById("colour-elem");
+        const count_elem = document.getElementById("number-elem");
+        const total_price = document.getElementById("total-elem");
+
+        let colour = localStorage.getItem("colour");
+        let count = localStorage.getItem("count");
+        
+        colour_elem.value = colour;
+        count_elem.value = count;
+        total_price.textContent = "₹" + 1340 * count;
+    </script>
+</body>
+</html>
